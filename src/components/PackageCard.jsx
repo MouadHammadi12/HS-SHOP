@@ -27,9 +27,6 @@ function PackageCard({ selectedServer: serverId, onAddToCart }) {
       <div className="price-card">
         <div className="price-header">
           <h3>{currentServer.name}</h3>
-          <span className="region-badge" style={{ backgroundColor: currentServer.color }}>
-            {currentServer.region}
-          </span>
         </div>
         
         <div className="price-details">

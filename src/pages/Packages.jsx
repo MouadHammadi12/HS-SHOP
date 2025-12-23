@@ -42,7 +42,25 @@ function Packages({ cart, setCart }) {
                 <div key={`${server.id}-${duration.id}`} className="package-card">
                   {/* Image Section */}
                   <div className="package-card-image" style={{ backgroundColor: server.color + '20' }}>
-                    <div className="package-image-placeholder" style={{ backgroundColor: server.color }}>
+                    {server.image ? (
+                      <img 
+                        src={server.image} 
+                        alt={server.name} 
+                        className="package-server-image"
+                        onError={(e) => {
+                          // إدا الصورة ما تحملتش، نرجعو للـ placeholder
+                          e.target.style.display = 'none'
+                          e.target.nextElementSibling.style.display = 'flex'
+                        }}
+                      />
+                    ) : null}
+                    <div 
+                      className="package-image-placeholder" 
+                      style={{ 
+                        backgroundColor: server.color,
+                        display: server.image ? 'none' : 'flex'
+                      }}
+                    >
                       <span className="server-initial">{server.name.charAt(server.name.length - 1)}</span>
                     </div>
                     {duration.popular && (
@@ -57,7 +75,6 @@ function Packages({ cart, setCart }) {
                   <div className="package-card-header">
                     <h3 className="package-name">{server.name}</h3>
                     <p className="package-duration-text">{duration.label}</p>
-                    <span className="package-region">{server.region}</span>
                   </div>
 
                   {/* Price and Description */}

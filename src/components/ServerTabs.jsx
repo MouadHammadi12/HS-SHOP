@@ -19,7 +19,6 @@ function ServerTabs({ selectedServer, onSelectServer }) {
             <div className="server-color" style={{ backgroundColor: server.color }}></div>
             <div className="server-info">
               <h3>{server.name}</h3>
-              <p>{server.region}</p>
               <span className="server-description">{server.description}</span>
             </div>
           </button>

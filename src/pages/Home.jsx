@@ -10,60 +10,7 @@ function Home() {
         <div className="hero-content">
           <div className="hero-image-section">
             <div className="iptv-illustration">
-              {/* Content Grid Background */}
-              <div className="content-grid-background">
-                {Array.from({ length: 48 }).map((_, i) => (
-                  <div key={i} className="content-thumbnail" style={{ animationDelay: `${i * 0.05}s` }}>
-                    <div className="thumbnail-content">
-                      {i % 8 === 0 && '📺'}
-                      {i % 8 === 1 && '⚽'}
-                      {i % 8 === 2 && '🎬'}
-                      {i % 8 === 3 && '🎵'}
-                      {i % 8 === 4 && '📱'}
-                      {i % 8 === 5 && '🎮'}
-                      {i % 8 === 6 && '🌍'}
-                      {i % 8 === 7 && '⭐'}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Central IPTV TV */}
-              <div className="central-tv">
-                <div className="tv-frame">
-                  <div className="tv-screen-content">
-                    <div className="iptv-text">IPTV</div>
-                    <div className="tv-pattern"></div>
-                  </div>
-                </div>
-                <div className="tv-app-icons">
-                  <div className="app-icon blue"></div>
-                  <div className="app-icon yellow"></div>
-                  <div className="app-icon green"></div>
-                  <div className="app-icon red"></div>
-                </div>
-              </div>
-
-              {/* Remote Control */}
-              <div className="remote-control-hand">
-                <div className="remote-control">
-                  <div className="remote-top">
-                    <div className="remote-button red-btn"></div>
-                    <div className="remote-button green-btn"></div>
-                    <div className="remote-button yellow-btn"></div>
-                    <div className="remote-button blue-btn"></div>
-                  </div>
-                  <div className="remote-dpad">
-                    <div className="dpad-up"></div>
-                    <div className="dpad-center"></div>
-                  </div>
-                  <div className="remote-bottom">
-                    <div className="remote-button small"></div>
-                    <div className="remote-button small"></div>
-                    <div className="remote-button small"></div>
-                  </div>
-                </div>
-              </div>
+              <img src="/logo1.jpg" alt="IPTV Service" className="hero-custom-image" />
             </div>
           </div>
           <div className="hero-text-section">
@@ -116,7 +63,6 @@ function Home() {
               <div key={server.id} className="server-preview-card">
                 <div className="server-preview-color" style={{ backgroundColor: server.color }}></div>
                 <h3>{server.name}</h3>
-                <p className="server-region">{server.region}</p>
                 <p className="server-desc">{server.description}</p>
               </div>
             ))}
