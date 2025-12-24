@@ -35,9 +35,9 @@ function Packages({ cart, setCart }) {
 
       <div className="packages-container">
         <div className="packages-grid">
-          {servers.map(server => 
+          {servers.map(server =>
             durations.map(duration => {
-              const price = calculatePrice(duration.months)
+              const price = calculatePrice(server.id, duration.months)
               return (
                 <div key={`${server.id}-${duration.id}`} className="package-card">
                   {/* Image Section */}

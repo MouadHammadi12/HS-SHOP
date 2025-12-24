@@ -1,3 +1,4 @@
+import { servers } from "./servers.js"
 export const durations = [
   { id: 1, months: 1, label: '1 Month', discount: 0, popular: false },
   { id: 3, months: 3, label: '3 Months', discount: 10, popular: false },
@@ -5,17 +6,18 @@ export const durations = [
   { id: 12, months: 12, label: '12 Months', discount: 30, popular: false },
 ]
 
-export const basePrice = 10 // Prix de base pour 1 mois en USD
-
-export const calculatePrice = (months) => {
+export const calculatePrice = (serverId, months) => {
+  const server = servers.find(s => s.id === serverId)
   const duration = durations.find(d => d.months === months)
+  const basePrice = server.price
   const total = basePrice * months
   const discount = total * (duration.discount / 100)
   return {
     original: total,
     discounted: total - discount,
     discount: duration.discount,
-    months
+    months,
+    serverId
   }
 }
 

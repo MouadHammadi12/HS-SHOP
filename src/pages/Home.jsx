@@ -63,6 +63,7 @@ function Home() {
               <div key={server.id} className="server-preview-card">
                 <div className="server-preview-color" style={{ backgroundColor: server.color }}></div>
                 <h3>{server.name}</h3>
+                <p className="server-price">${server.price}/month</p>
                 <p className="server-desc">{server.description}</p>
               </div>
             ))}
